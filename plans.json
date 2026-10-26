@@ -1,0 +1,5 @@
+[
+  {"code":"starter","name":"Starter","name_tr":"Starter","name_en":"Starter","description_tr":"Küçük ekipler ve erken aşama projeler için","description_en":"For small teams and early-stage projects","has_trial":true,"trial_days":14,"currency_symbol":"$","monthly_price_value":7,"yearly_price_value":70,"yearly_savings_percent":17,"limits":[],"features":[]},
+  {"code":"growth","name":"Growth","name_tr":"Growth","name_en":"Growth","is_featured":true,"description_tr":"Daha fazla güce ihtiyaç duyan büyüyen ekipler için","description_en":"For growing teams that need more power","has_trial":true,"trial_days":14,"currency_symbol":"$","monthly_price_value":12,"yearly_price_value":120,"yearly_savings_percent":17,"limits":[],"features":[]},
+  {"code":"enterprise","name":"Enterprise","name_tr":"Enterprise","name_en":"Enterprise","is_enterprise":true,"description_tr":"Stüdyolar ve büyük organizasyonlar için","description_en":"For studios and large organisations","limits":[],"features":[]}
+]

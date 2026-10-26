@@ -14658,61 +14658,6 @@ html::-webkit-scrollbar-thumb:hover {
     color: #3a3f47 !important;
 }
 
-/* ---- listing: dark hero, white grid with light cards ---- */
-#productsView .dx-products {
-    background: #ffffff !important;
-    padding: 80px 0 112px;
-}
-
-#productsView .dx-product-row:nth-child(n) {
-    border: 1px solid rgba(8, 9, 10, 0.1) !important;
-    background: #f6f8fa !important;
-    color: #0b0d10 !important;
-}
-
-#productsView .dx-product-row:nth-child(-n+2) {
-    border-color: rgba(0, 104, 206, 0.45) !important;
-    background:
-        radial-gradient(ellipse 70% 60% at 100% 0%, rgba(0, 162, 251, 0.2), transparent 70%),
-        #ffffff !important;
-}
-
-#productsView .dx-product-row:nth-child(n):hover {
-    border-color: #0068ce !important;
-    background: #ffffff !important;
-    box-shadow: 0 18px 40px rgba(8, 9, 10, 0.08);
-}
-
-#productsView .dx-product-row .dx-product-index {
-    color: rgba(8, 9, 10, 0.3) !important;
-}
-
-#productsView .dx-product-row .dx-product-text .badge {
-    border-color: rgba(8, 9, 10, 0.2) !important;
-    color: #3a3f47 !important;
-}
-
-#productsView .dx-product-row .dx-product-text .badge.ready {
-    border-color: rgba(0, 104, 206, 0.5) !important;
-    background: rgba(0, 104, 206, 0.1) !important;
-    color: #0068ce !important;
-}
-
-#productsView .dx-product-row .dx-product-text h2 {
-    color: #0b0d10 !important;
-}
-
-#productsView .dx-product-row .dx-product-text h3 {
-    color: #5b616b !important;
-}
-
-#productsView .dx-product-row .dx-product-text p {
-    color: #5b616b !important;
-}
-
-#productsView .dx-product-row .dx-product-link {
-    color: #0068ce !important;
-}
 
 #productView .features .section-title,
 #productView .pricing .section-title {

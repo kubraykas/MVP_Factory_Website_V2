@@ -1,6 +1,6 @@
 {
   "name": "mvp-factory-website",
   "private": true,
-  "scripts": { "build": "node build.js" },
+  "scripts": { "make": "node build.js" },
   "devDependencies": { "handlebars": "^4.7.8" }
 }

@@ -560,12 +560,12 @@
                 </nav>
                 <div class="product-hero-grid">
                     <div class="product-hero-text">
-                        <span class="section-eyebrow"><span class="lang-tr">Dijital Dönüşüm Ürünleri</span><span class="lang-en" style="display:none;">Digital Transformation Products</span></span>
+                        <span class="section-eyebrow" data-product-eyebrow><span class="lang-tr">Dijital Dönüşüm Ürünleri</span><span class="lang-en" style="display:none;">Digital Transformation Products</span></span>
                         <h1 data-product-title></h1>
                         <p data-product-desc></p>
                         <div class="product-hero-actions">
                             <button class="btn btn-primary btn-large" type="button" data-product-trial data-modal-open="signupModal" data-plan-code="{{#if plans.[0]}}{{plans.[0].code}}{{else}}starter{{/if}}" data-i18n="startTrialNow">Start Free Trial</button>
-                            <button class="btn btn-ghost-light btn-large" type="button" data-modal-open="salesModal" data-i18n="contactSales">Contact Sales</button>
+                            <button class="btn btn-ghost-light btn-large" type="button" data-modal-open="salesModal" data-product-sales data-i18n="contactSales">Contact Sales</button>
                         </div>
                     </div>
                     <dl class="product-facts">
@@ -1181,89 +1181,147 @@
         <div class="product-detail" data-product-detail="lms" hidden>
             <section class="pms-section">
                 <div class="container">
-                    <h2 class="section-title"><span class="lang-tr">Eğitim Yönetim Sistemi (LMS):<br>Eğitim, Staj ve Öğrenmeyi Dijitalleştirin</span><span class="lang-en" style="display:none;">Learning Management System (LMS):<br>Digitise Training, Internships and Learning</span></h2>
                     <div class="roket-modules-intro">
-                        <p><span class="lang-tr">ROKET-LMS ile kurum içi eğitimlerinizi, staj programlarınızı ve öğrenme içeriklerinizi tek platformda yönetin. Katılımı, ilerlemeyi ve başarıyı ölçülebilir hale getirin.</span><span class="lang-en" style="display:none;">With ROKET-LMS, manage in-house training, internship programmes and learning content on one platform. Make participation, progress and achievement measurable.</span></p>
+                        <p><span class="lang-tr">ROKET-LMS’yi kendi sunucu altyapınızda izole ve güvenli bir şekilde çalıştırın. Kurum içi eğitimlerinizi, staj programlarınızı, proje süreçlerinizi ve veri güvenliğinden ödün vermeden doğru yetenek–işveren/pozisyon eşleşmesini tek bir çatı altında yönetin.</span><span class="lang-en" style="display:none;">Run ROKET-LMS in isolation and securely on your own server infrastructure. Manage your in-house training, internship programmes, project processes and the right talent–employer/position match under one roof, without compromising data security.</span></p>
                     </div>
                     <div class="pms-quote">
-                        <p><span class="lang-tr">Gelişen çalışanlar, gelişen şirketler demektir. ROKET-LMS; doğru içeriği doğru kişiye ulaştırır ve öğrenmeyi günlük işin doğal bir parçası haline getirir.</span><span class="lang-en" style="display:none;">Growing people make growing companies. ROKET-LMS delivers the right content to the right person and makes learning a natural part of daily work.</span></p>
-                    </div>
-                    <div class="pms-visual">
-                        <div class="product-demo-card">
-                            <h3><span class="lang-tr">Canlı demo talep edin</span><span class="lang-en" style="display:none;">Request a live demo</span></h3>
-                            <p><span class="lang-tr">ROKET-LMS çözümünü ekibinizle birlikte inceleyelim.</span><span class="lang-en" style="display:none;">Let&#39;s walk through ROKET-LMS with your team.</span></p>
-                            <button class="btn btn-primary" type="button" data-modal-open="salesModal" data-i18n="contactSales">Contact Sales</button>
-                        </div>
+                        <p><span class="lang-tr">Gelişen çalışanlar, gelişen şirketler demektir. ROKET-LMS On-Premise; tüm verilerinizin kontrolünü size verir, teorik öğrenmeyi staj ve gerçek projelerle istihdama taşır.</span><span class="lang-en" style="display:none;">Growing people make growing companies. ROKET-LMS On-Premise gives you control of all your data and carries theoretical learning into employment through internships and real projects.</span></p>
                     </div>
                     <div class="pms-grid">
                         <div class="pms-card">
-                            <div class="pms-icon"><i class="fas fa-book-open"></i></div>
+                            <div class="pms-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                             <div class="card-text">
-                                <h3><span class="lang-tr">Eğitim Kataloğu</span><span class="lang-en" style="display:none;">Course Catalogue</span></h3>
-                                <p><span class="lang-tr">Kurs ve içeriklerinizi kategorilere ayırarak yayınlayın.</span><span class="lang-en" style="display:none;">Publish your courses and content by category.</span></p>
+                                <h3><span class="lang-tr">Bütünleşik Eğitim & Canlı Ders Altyapısı</span><span class="lang-en" style="display:none;">Integrated Training & Live Class Infrastructure</span></h3>
+                                <p><span class="lang-tr">Kurs ve içeriklerinizi kurumunuza özel ağda yayınlayın. Entegre canlı ders, devamsızlık ve not takibi ile öğrenci, öğretmen ve yönetici panellerini tamamen yerel sunucularda yönetin.</span><span class="lang-en" style="display:none;">Publish your courses and content on your own network. Run student, teacher and administrator panels entirely on local servers, with integrated live classes, attendance and grade tracking.</span></p>
                             </div>
                         </div>
                         <div class="pms-card">
                             <div class="pms-icon"><i class="fas fa-route"></i></div>
                             <div class="card-text">
-                                <h3><span class="lang-tr">Öğrenme Yolları</span><span class="lang-en" style="display:none;">Learning Paths</span></h3>
-                                <p><span class="lang-tr">Rol ve seviyeye göre kişiselleştirilmiş eğitim planları oluşturun.</span><span class="lang-en" style="display:none;">Build personalised training plans by role and level.</span></p>
+                                <h3><span class="lang-tr">Kişiselleştirilmiş Öğrenme Yolları (4 Katman)</span><span class="lang-en" style="display:none;">Personalised Learning Paths (4 Tiers)</span></h3>
+                                <p><span class="lang-tr">Bireyin seviyesine uygun gelişim planları: Temel Dijital Okuryazarlık, Üretken Kullanım, Uygulamalı Staj/Gelişim ve İleri Teknoloji/Yapay Zekâ Uzmanlığı.</span><span class="lang-en" style="display:none;">Development plans matched to each person's level: Basic Digital Literacy, Productive Use, Applied Internship/Development, and Advanced Technology/AI Expertise.</span></p>
                             </div>
                         </div>
                         <div class="pms-card">
-                            <div class="pms-icon"><i class="fas fa-user-graduate"></i></div>
+                            <div class="pms-icon"><i class="fas fa-flask"></i></div>
                             <div class="card-text">
-                                <h3><span class="lang-tr">Staj Programı Yönetimi</span><span class="lang-en" style="display:none;">Internship Management</span></h3>
-                                <p><span class="lang-tr">Stajyer başvurularını, görevlerini ve değerlendirmelerini takip edin.</span><span class="lang-en" style="display:none;">Track intern applications, assignments and evaluations.</span></p>
+                                <h3><span class="lang-tr">Uygulamalı Staj & Proje Yönetim Laboratuvarı</span><span class="lang-en" style="display:none;">Applied Internship & Project Management Lab</span></h3>
+                                <p><span class="lang-tr">Teorinin pratiğe dönüşmesi için kurum içi gerçek görevler, ekip bazlı proje çalışmaları, teslim takibi ve katkı oranlarının izlendiği güvenli proje alanı.</span><span class="lang-en" style="display:none;">A secure project space with real in-house tasks, team-based project work, delivery tracking and contribution rates, turning theory into practice.</span></p>
                             </div>
                         </div>
                         <div class="pms-card">
                             <div class="pms-icon"><i class="fas fa-clipboard-check"></i></div>
                             <div class="card-text">
-                                <h3><span class="lang-tr">Sınav ve Değerlendirme</span><span class="lang-en" style="display:none;">Exams &amp; Assessment</span></h3>
-                                <p><span class="lang-tr">Sınavlar hazırlayın, sonuçları otomatik puanlayın.</span><span class="lang-en" style="display:none;">Create exams and score results automatically.</span></p>
+                                <h3><span class="lang-tr">Sınav, Değerlendirme & Yetkinlik Matrisi</span><span class="lang-en" style="display:none;">Exams, Assessment & Competency Matrix</span></h3>
+                                <p><span class="lang-tr">Otomatik puanlanan sınavlar hazırlayın; bireyin teorik başarısının yanı sıra kazandığı dijital ve mesleki yetkinlik matrisini tamamen kurum veritabanında raporlayın.</span><span class="lang-en" style="display:none;">Create automatically graded exams and report each person's theoretical results together with their digital and professional competency matrix, entirely in your own database.</span></p>
                             </div>
                         </div>
                         <div class="pms-card">
                             <div class="pms-icon"><i class="fas fa-certificate"></i></div>
                             <div class="card-text">
-                                <h3><span class="lang-tr">Sertifikalandırma</span><span class="lang-en" style="display:none;">Certification</span></h3>
-                                <p><span class="lang-tr">Tamamlanan eğitimler için sertifika oluşturun.</span><span class="lang-en" style="display:none;">Issue certificates for completed training.</span></p>
+                                <h3><span class="lang-tr">Doğrulanabilir Sertifika & Dinamik Profil</span><span class="lang-en" style="display:none;">Verifiable Certificates & Dynamic Profiles</span></h3>
+                                <p><span class="lang-tr">Tamamlanan eğitimler, teslim edilen projeler ve staj performansının kurum içi profillere işlendiği doğrulanabilir dijital sertifikasyon ve dinamik yetenek havuzu.</span><span class="lang-en" style="display:none;">Verifiable digital certification and a dynamic talent pool, where completed training, delivered projects and internship performance are written into in-house profiles.</span></p>
                             </div>
                         </div>
                         <div class="pms-card">
-                            <div class="pms-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="pms-icon"><i class="fas fa-people-arrows"></i></div>
                             <div class="card-text">
-                                <h3><span class="lang-tr">İlerleme Raporları</span><span class="lang-en" style="display:none;">Progress Reports</span></h3>
-                                <p><span class="lang-tr">Kişi ve ekip bazında eğitim ilerlemesini raporlayın.</span><span class="lang-en" style="display:none;">Report training progress by person and team.</span></p>
+                                <h3><span class="lang-tr">İK Bileşeni & Yetenek - Pozisyon Eşleştirme</span><span class="lang-en" style="display:none;">HR Component & Talent–Position Matching</span></h3>
+                                <p><span class="lang-tr">Kurum içi öğrenme verileri ve proje çıktılarına dayalı aday havuzu oluşturun; şirket içi açık pozisyonlar veya işveren ihtiyaçlarıyla doğru yeteneği veriye dayalı eşleştirin.</span><span class="lang-en" style="display:none;">Build a candidate pool from in-house learning data and project outputs, and match the right talent to open positions or employer needs based on data.</span></p>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section class="pms-section lms-personas-section">
+                <div class="container">
+                    <h2 class="section-title"><span class="lang-tr">Kapsayıcı Dijital Dönüşüm: 4 Yetkinlik Katmanı</span><span class="lang-en" style="display:none;">Inclusive Digital Transformation: 4 Competency Tiers</span></h2>
+                    <div class="roket-modules-intro">
+                        <p><span class="lang-tr">Roket-LMS On-Premise, herkese tek tip eğitim sunmak yerine bireyin dijital yetkinlik seviyesine göre özelleştirilmiş gelişim yolları sunar.</span><span class="lang-en" style="display:none;">Instead of offering the same training to everyone, Roket-LMS On-Premise provides development paths customised to each person’s digital competency level.</span></p>
+                    </div>
+                    <div class="lms-personas">
+                        <article class="lms-persona">
+                            <span class="lms-persona-no">01</span>
+                            <h3><span class="lang-tr">Temel Dijital Okuryazarlık</span><span class="lang-en" style="display:none;">Basic Digital Literacy</span></h3>
+                            <p><strong><span class="lang-tr">Kitle:</span><span class="lang-en" style="display:none;">Audience:</span></strong> <span class="lang-tr">Dijital dünyayla henüz temas kurmamış veya geleneksel meslek sahibi bireyler.</span><span class="lang-en" style="display:none;">People who have not yet engaged with the digital world, or who hold traditional professions.</span></p>
+                            <p><strong><span class="lang-tr">Odak:</span><span class="lang-en" style="display:none;">Focus:</span></strong> <span class="lang-tr">Temel dijital araç okuryazarlığı ve iş gücü piyasasına uyum.</span><span class="lang-en" style="display:none;">Basic digital tool literacy and fit with the labour market.</span></p>
+                        </article>
+                        <article class="lms-persona">
+                            <span class="lms-persona-no">02</span>
+                            <h3><span class="lang-tr">Üretken Kullanıcılar (Verimlilik)</span><span class="lang-en" style="display:none;">Productive Users (Efficiency)</span></h3>
+                            <p><strong><span class="lang-tr">Kitle:</span><span class="lang-en" style="display:none;">Audience:</span></strong> <span class="lang-tr">Dijital araçları kullanan ancak bu araçlardan verim alamayan çalışanlar.</span><span class="lang-en" style="display:none;">Employees who use digital tools but do not get value from them.</span></p>
+                            <p><strong><span class="lang-tr">Odak:</span><span class="lang-en" style="display:none;">Focus:</span></strong> <span class="lang-tr">Araç farkındalığından üretken ve mesleğe dönük kullanıma geçiş.</span><span class="lang-en" style="display:none;">Moving from tool awareness to productive, job-oriented use.</span></p>
+                        </article>
+                        <article class="lms-persona">
+                            <span class="lms-persona-no">03</span>
+                            <h3><span class="lang-tr">Uygulamalı Gelişim & Stajyerler</span><span class="lang-en" style="display:none;">Applied Development & Interns</span></h3>
+                            <p><strong><span class="lang-tr">Kitle:</span><span class="lang-en" style="display:none;">Audience:</span></strong> <span class="lang-tr">Temel becerilerini üst seviyeye taşımak ve iş hayatına girmek isteyen gençler/öğrenciler.</span><span class="lang-en" style="display:none;">Young people and students who want to take their basic skills further and enter working life.</span></p>
+                            <p><strong><span class="lang-tr">Odak:</span><span class="lang-en" style="display:none;">Focus:</span></strong> <span class="lang-tr">Gerçek proje ve staj görevleri ile çalışma ortamı deneyimi kazanma, istihdama hazırlanma.</span><span class="lang-en" style="display:none;">Gaining workplace experience through real project and internship tasks, and preparing for employment.</span></p>
+                        </article>
+                        <article class="lms-persona">
+                            <span class="lms-persona-no">04</span>
+                            <h3><span class="lang-tr">İleri Teknoloji & Yapay Zekâ Uzmanlığı</span><span class="lang-en" style="display:none;">Advanced Technology & AI Expertise</span></h3>
+                            <p><strong><span class="lang-tr">Kitle:</span><span class="lang-en" style="display:none;">Audience:</span></strong> <span class="lang-tr">Yazılım, veri ve AI alanlarında derinleşmek isteyen yetenekler.</span><span class="lang-en" style="display:none;">Talent that wants to go deeper in software, data and AI.</span></p>
+                            <p><strong><span class="lang-tr">Odak:</span><span class="lang-en" style="display:none;">Focus:</span></strong> <span class="lang-tr">Yapay zekâ modülleri, ileri seviye proje üretimi ve uzmanlık gerektiren pozisyonlara erişim.</span><span class="lang-en" style="display:none;">AI modules, advanced project work and access to positions that require expertise.</span></p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pms-section lms-onprem-section">
+                <div class="container">
+                    <div class="lms-onprem">
+                        <h2 class="section-title"><span class="lang-tr">%100 Veri Hakimiyeti: On-Premise (Yerinde Kurulum) Mimarisi</span><span class="lang-en" style="display:none;">100% Data Sovereignty: On-Premise Architecture</span></h2>
+                        <div class="roket-modules-intro">
+                            <p><span class="lang-tr">Kurumunuzun en katı güvenlik standartlarına, KVKK ve GDPR uyumluluk gereksinimlerine tam uyum sağlayan izole altyapı.</span><span class="lang-en" style="display:none;">An isolated infrastructure that fully meets your organisation’s strictest security standards and the KVKK and GDPR compliance requirements.</span></p>
+                        </div>
+                        <div class="lms-onprem-grid">
+                            <div class="lms-onprem-item">
+                                <i class="fas fa-user-shield" aria-hidden="true"></i>
+                                <div><h3><span class="lang-tr">Tam Veri Gizliliği</span><span class="lang-en" style="display:none;">Full Data Privacy</span></h3><p><span class="lang-tr">Tüm biyometrik veriler (yüz ve ses tanıma kayıtları), kullanıcı bilgileri, sınav sonuçları ve staj proje çıktıları yalnızca sizin sunucularınızda barındırılır; dış ağlara veri çıkışı olmaz.</span><span class="lang-en" style="display:none;">All biometric data (face and voice recognition records), user information, exam results and internship project outputs are hosted only on your servers; no data leaves for external networks.</span></p></div>
+                            </div>
+                            <div class="lms-onprem-item">
+                                <i class="fas fa-infinity" aria-hidden="true"></i>
+                                <div><h3><span class="lang-tr">Sınırsız Kullanıcı & Kesintisiz Erişim</span><span class="lang-en" style="display:none;">Unlimited Users & Uninterrupted Access</span></h3><p><span class="lang-tr">Kullanıcı başı lisanslama maliyeti veya kısıtlaması olmaksızın tüm organizasyonunuzu, çalışanlarınızı ve stajyer ekosisteminizi tek kurumsal kurulumla kapsayın.</span><span class="lang-en" style="display:none;">Cover your whole organisation, employees and intern ecosystem with a single enterprise installation, with no per-user licence cost or limit.</span></p></div>
+                            </div>
+                            <div class="lms-onprem-item">
+                                <i class="fas fa-plug" aria-hidden="true"></i>
+                                <div><h3><span class="lang-tr">Kurumsal Entegrasyon Kolaylığı</span><span class="lang-en" style="display:none;">Easy Enterprise Integration</span></h3><p><span class="lang-tr">Mevcut ERP, HR (İnsan Kaynakları) ve SSO (Single Sign-On / Tekli Oturum Açma) sistemlerinizle sorunsuz ve doğrudan entegrasyon.</span><span class="lang-en" style="display:none;">Smooth, direct integration with your existing ERP, HR and SSO (Single Sign-On) systems.</span></p></div>
+                            </div>
+                            <div class="lms-onprem-item">
+                                <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                                <div><h3><span class="lang-tr">Özelleştirilebilir Altyapı</span><span class="lang-en" style="display:none;">Customisable Infrastructure</span></h3><p><span class="lang-tr">Kurumunuzun kendi iç dinamiklerine, staj yönergelerine ve eğitim süreçlerine göre modüler olarak uyarlanabilir mimari.</span><span class="lang-en" style="display:none;">A modular architecture that adapts to your own internal dynamics, internship guidelines and training processes.</span></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pms-section">
+                <div class="container">
                     <div class="version-comparison">
                         <div class="version-column version-1">
-                            <h3 data-i18n="version1Title">Versiyon 1:</h3>
-                            <h4><span class="lang-tr">Planlanan Özellikler:</span><span class="lang-en" style="display:none;">Planned Features:</span></h4>
-                            <ul class="feature-list">
-                                <li><span class="lang-tr">Eğitim kataloğu</span><span class="lang-en" style="display:none;">Course catalogue</span></li>
-                                <li><span class="lang-tr">Kurs atama</span><span class="lang-en" style="display:none;">Course assignment</span></li>
-                                <li><span class="lang-tr">Staj başvuru ve takip</span><span class="lang-en" style="display:none;">Internship applications and tracking</span></li>
-                                <li><span class="lang-tr">Sınav modülü</span><span class="lang-en" style="display:none;">Exam module</span></li>
-                                <li><span class="lang-tr">Sertifika oluşturma</span><span class="lang-en" style="display:none;">Certificate generation</span></li>
-                                <li><span class="lang-tr">İlerleme raporları</span><span class="lang-en" style="display:none;">Progress reports</span></li>
-                            </ul>
+                            <h3><span class="lang-tr">Versiyon 1:</span><span class="lang-en" style="display:none;">Version 1:</span></h3>
+                            <h4><span class="lang-tr">Mevcut ve canlı on-prem modüller</span><span class="lang-en" style="display:none;">Current and live on-prem modules</span></h4>
+                            <ul class="feature-list"><li><span class="lang-tr">Bütünleşik Eğitim Kataloğu & Ders Yönetimi</span><span class="lang-en" style="display:none;">Integrated Course Catalogue & Class Management</span></li><li><span class="lang-tr">Rol Bazlı Paneller (Öğrenci, Öğretmen, Yönetici, İK)</span><span class="lang-en" style="display:none;">Role-based Panels (Student, Teacher, Administrator, HR)</span></li><li><span class="lang-tr">Uygulamalı Staj ve Proje/Görev Takip Modülü</span><span class="lang-en" style="display:none;">Applied Internship and Project/Task Tracking Module</span></li><li><span class="lang-tr">Yerel Sunucularda Çalışan Entegre Canlı Ders Altyapısı</span><span class="lang-en" style="display:none;">Integrated Live Class Infrastructure Running on Local Servers</span></li><li><span class="lang-tr">Biyometrik Güvenlik (Yerel Ses ve Yüz Tanıma Entegrasyonu)</span><span class="lang-en" style="display:none;">Biometric Security (Local Voice and Face Recognition Integration)</span></li><li><span class="lang-tr">Dinamik CV, Sertifikalandırma ve İlerleme Raporları</span><span class="lang-en" style="display:none;">Dynamic CV, Certification and Progress Reports</span></li><li><span class="lang-tr">Kurum İçi İK Aday Havuzu ve İşe Alım Modülü</span><span class="lang-en" style="display:none;">In-house HR Candidate Pool and Recruitment Module</span></li></ul>
                         </div>
                         <div class="version-column version-2">
-                            <h3 data-i18n="version2Title">Versiyon 2:</h3>
-                            <h4><span class="lang-tr">Yol Haritası:</span><span class="lang-en" style="display:none;">Roadmap:</span></h4>
-                            <ul class="feature-list">
-                                <li><span class="lang-tr">AI destekli içerik önerileri</span><span class="lang-en" style="display:none;">AI-assisted content recommendations</span></li>
-                                <li><span class="lang-tr">Video ve canlı ders entegrasyonu</span><span class="lang-en" style="display:none;">Video and live class integration</span></li>
-                                <li><span class="lang-tr">Yetkinlik matrisi</span><span class="lang-en" style="display:none;">Competency matrix</span></li>
-                                <li><span class="lang-tr">HR modülüyle performans bağlantısı</span><span class="lang-en" style="display:none;">Performance link with the HR module</span></li>
-                                <li class="highlight"><span class="lang-tr">Diğer modül ilaveleri ile tam entegrasyon</span><span class="lang-en" style="display:none;">Full integration with other module add-ons</span></li>
-                                <li class="highlight special"><span class="lang-tr">Roket AI Agent</span><span class="lang-en" style="display:none;">Roket AI Agent</span></li>
-                            </ul>
+                            <h3><span class="lang-tr">Versiyon 2:</span><span class="lang-en" style="display:none;">Version 2:</span></h3>
+                            <h4><span class="lang-tr">On-premise AI yol haritası</span><span class="lang-en" style="display:none;">On-premise AI roadmap</span></h4>
+                            <ul class="feature-list"><li><span class="lang-tr">Yerel AI - Çok Ajanlı Yetenek Değerlendirme Katmanı: Dış servislere bağımlı kalmadan, kurum sunucularında çalışan akıllı öğrenme ve proje analitiği.</span><span class="lang-en" style="display:none;">Local AI – Multi-agent Talent Assessment Layer: intelligent learning and project analytics running on your servers, with no dependence on external services.</span></li><li><span class="lang-tr">AI Destekli Kişiselleştirilmiş Kurum İçi İçerik Önerileri</span><span class="lang-en" style="display:none;">AI-powered Personalised In-house Content Recommendations</span></li><li><span class="lang-tr">Otomatik Yetkinlik Matrisi ve İK Performans Bağlantısı</span><span class="lang-en" style="display:none;">Automatic Competency Matrix and HR Performance Link</span></li><li><span class="lang-tr">Kurum İçi Veri Analitiği ve Asistan Altyapısı (Roket AI Agent)</span><span class="lang-en" style="display:none;">In-house Data Analytics and Assistant Infrastructure (Roket AI Agent)</span></li><li><span class="lang-tr">Çoklu Dil Desteği ve Kurumsal Müfredat Entegrasyonları</span><span class="lang-en" style="display:none;">Multi-language Support and Enterprise Curriculum Integrations</span></li></ul>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pms-section lms-cta-section">
+                <div class="container">
+                    <div class="lms-cta">
+                        <h2 class="section-title"><span class="lang-tr">Kurumsal Sunucularınızda Canlı Demo Talep Edin</span><span class="lang-en" style="display:none;">Request a Live Demo on Your Own Servers</span></h2>
+                        <p><span class="lang-tr">Roket-LMS On-Premise çözümünü, güvenlik mimarimizi ve staj yönetim altyapımızı teknik ekibinizle birlikte inceleyelim.</span><span class="lang-en" style="display:none;">Let us walk through the Roket-LMS On-Premise solution, our security architecture and our internship management infrastructure together with your technical team.</span></p>
+                        <button class="btn btn-primary btn-large" type="button" data-modal-open="contactModal"><span class="lang-tr">Teknik Toplantı Planla</span><span class="lang-en" style="display:none;">Schedule a Technical Meeting</span></button>
+                        <p class="lms-cta-mail"><a href="mailto:info@roket.digital">info@roket.digital</a></p>
                     </div>
                 </div>
             </section>

@@ -1372,7 +1372,7 @@ function initializeShowcaseModals() {
         'roket-tms': { code: 'tm', icon: 'fa-check-circle', name: 'Roket-TMS', tr: 'Görev Ve İş Takibi Yönetimi Modülü', en: 'Task and Work Tracking Management Module', ready: true, categoryTr: 'Proje ve Görev Yönetimi', categoryEn: 'Project & Task Management' },
         'roket-prod': { code: 'prod', icon: 'fa-box', name: 'Roket-PROD', tr: 'Ürün Geliştirme Ve Portföy Yönetimi Modülü', en: 'Product Development and Portfolio Management Module', categoryTr: 'Ürün ve Operasyon Yönetimi', categoryEn: 'Product & Operations Management' },
         'roket-crm': { code: 'crm', icon: 'fa-address-book', name: 'Roket-CRM', tr: 'Müşteri İlişkileri Yönetimi Modülü', en: 'Customer Relationship Management Module', categoryTr: 'Satış ve Müşteri Yönetimi', categoryEn: 'Sales & Customer Management' },
-        'roket-lms': { code: 'lms', icon: 'fa-graduation-cap', name: 'Roket-LMS', tr: 'Eğitim, Staj Ve Öğrenme Yönetimi Modülü', en: 'Training, Internship and Learning Management Module', categoryTr: 'İnsan Kaynakları ve Eğitim', categoryEn: 'People & Learning' },
+        'roket-lms': { code: 'lms', icon: 'fa-graduation-cap', name: 'Roket-LMS', title: 'Roket-LMS (On-Premise)', tr: 'Kurumunuza Özel, Tam Güvenli ve Bütünleşik Eğitim, Staj ve İK Platformu', en: 'A Secure, Integrated Training, Internship and HR Platform Built for Your Organisation', eyebrowTr: 'Kurumsal Çözümler / Roket-LMS On-Premise', eyebrowEn: 'Enterprise Solutions / Roket-LMS On-Premise', salesTr: 'Kurumsal Demo Talep Et', salesEn: 'Request an Enterprise Demo', noComing: true, categoryTr: 'İnsan Kaynakları ve Eğitim', categoryEn: 'People & Learning' },
         'roket-hr': { code: 'hr', icon: 'fa-users', name: 'Roket-HR', tr: 'İnsan Kaynakları, CV ve Aday Havuzu Yönetimi Modülü', en: 'Human Resources, CV and Candidate Pool Management Module', categoryTr: 'İnsan Kaynakları ve Eğitim', categoryEn: 'People & Learning' },
         'roket-process': { code: 'proc', icon: 'fa-tasks', name: 'Roket-PROCESS', tr: 'İş Süreçleri Yönetimi Ve Optimizasyon Modülü', en: 'Business Process Management and Optimization Module', categoryTr: 'Ürün ve Operasyon Yönetimi', categoryEn: 'Product & Operations Management' },
         'roket-twin': { code: 'dt', icon: 'fa-building', name: 'Roket-TWIN', tr: 'Dijital Veri İkizi Ve Yapay Zeka Analitiği Modülü', en: 'Digital Data Twin and AI Analytics Module', categoryTr: 'Veri ve Yapay Zeka', categoryEn: 'Data & AI' }
@@ -1417,11 +1417,19 @@ function initializeShowcaseModals() {
     }
 
     function renderProductPage(view, product) {
-        view.querySelector('[data-product-title]').textContent = product.name;
+        view.querySelector('[data-product-title]').textContent = product.title || product.name;
         view.querySelector('[data-product-crumb]').textContent = product.name;
         view.querySelector('[data-product-fact="name"]').textContent = product.name;
         view.querySelector('[data-product-fact="category"]').innerHTML = langSpans(product.categoryTr, product.categoryEn);
         view.querySelector('[data-product-desc]').innerHTML = langSpans(product.tr, product.en);
+        // optional per-product hero overrides (eyebrow line and sales button label)
+        const eyebrow = view.querySelector('[data-product-eyebrow]');
+        if (eyebrow) eyebrow.innerHTML = product.eyebrowTr ? langSpans(product.eyebrowTr, product.eyebrowEn) : langSpans('Dijital Dönüşüm Ürünleri', 'Digital Transformation Products');
+        const salesBtn = view.querySelector('[data-product-sales]');
+        if (salesBtn) {
+            salesBtn.removeAttribute('data-i18n');
+            salesBtn.innerHTML = product.salesTr ? langSpans(product.salesTr, product.salesEn) : langSpans('Satış ile İletişime Geç', 'Contact Sales');
+        }
         const badge = view.querySelector('[data-product-badge]');
         badge.setAttribute('data-i18n', product.ready ? 'readyForSale' : 'comingSoon');
         badge.textContent = getTranslation(product.ready ? 'readyForSale' : 'comingSoon');
@@ -1432,7 +1440,7 @@ function initializeShowcaseModals() {
         // Every product has its own detail block; coming-soon products also get the contact block
         view.querySelectorAll('[data-product-detail]').forEach((detail) => {
             const key = detail.getAttribute('data-product-detail');
-            detail.hidden = !(key === product.code || (key === 'coming' && !product.ready));
+            detail.hidden = !(key === product.code || (key === 'coming' && !product.ready && !product.noComing));
         });
         // The PMS page already contains the pricing section itself
         ensureProductPackages(view).hidden = !product.ready || product.code === 'pms' || product.code === 'tm';

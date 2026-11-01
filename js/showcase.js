@@ -1989,7 +1989,7 @@ function showEmailAlreadyExistsPopup(data) {
         { clip: [3.7, 5.5] },     // Teknopark Istanbul sign and lobby
         { clip: [13.7, 14.28] },  // the team posing in the lobby
         { scene: 'solutions', ms: 4600 },
-        { clip: [10.05, 13.65] }, // candid smiles
+        { clip: [11.72, 12.85] }, // candid smiles (the shots with the ArVis DeepTech banner are left out)
         { clip: [14.7, 15.38] },  // two faces in front of the full hall
         { clip: [15.4, 16.15] },  // microphone close-up
         { clip: [17.7, 20.05] },  // audience, phones up
@@ -2088,6 +2088,8 @@ function showEmailAlreadyExistsPopup(data) {
             hideScene();
             video.currentTime = step.clip[0];
             const resume = function () {
+                // If the seek did not land (no range requests), the film would play from its title card: skip this clip instead
+                if (video.currentTime < step.clip[0] - 0.5) { next(); return; }
                 const attempt = video.play();
                 if (attempt && attempt.catch) attempt.catch(function () {});
                 reveal();
@@ -2106,6 +2108,7 @@ function showEmailAlreadyExistsPopup(data) {
         const following = (index + 1) % PLAN.length;
         if (PLAN[index].scene) hideScene();
         video.classList.add('is-fading');
+        video.pause(); // freeze the last frame while it fades so the next shot or the logo never shows
         setTimeout(function () {
             if (PLAN[following].scene) { switching = false; }
             enter(following);
@@ -2114,7 +2117,7 @@ function showEmailAlreadyExistsPopup(data) {
 
     function tick() {
         const step = PLAN[index];
-        if (!switching && step.clip && video.currentTime >= step.clip[1]) next();
+        if (!switching && step.clip && (video.currentTime >= step.clip[1] || video.currentTime < step.clip[0] - 0.5)) next();
         requestAnimationFrame(tick);
     }
 

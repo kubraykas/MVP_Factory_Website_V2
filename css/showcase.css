@@ -20192,3 +20192,52 @@ textarea,
     100% { left: 56em; top: 44em; opacity: 0; }
 }
 
+
+
+/* Hero v4: large Inter headline, no accent line, small muted supporting copy beneath */
+.hero-corporate .hero-slogan {
+    max-width: 980px;
+    margin: 0 0 32px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(42px, 6.2vw, 80px);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+    color: #f7f8f8;
+    text-shadow: none;
+}
+
+.hero-corporate .hero-slogan::after {
+    display: none;
+}
+
+.hero-corporate .hero-pretitle.hero-lead {
+    max-width: 620px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(16px, 1.35vw, 18px);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    color: #8a8f98;
+}
+
+.hero-corporate .hero-pretitle.hero-lead .accent-word {
+    display: block;
+    margin-top: 14px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: inherit;
+    background: none;
+    -webkit-text-fill-color: #f7f8f8;
+    color: #f7f8f8;
+}
+
+@media (max-width: 768px) {
+    .hero-corporate .hero-slogan {
+        font-size: clamp(34px, 10.5vw, 48px);
+        margin-bottom: 24px;
+    }
+}

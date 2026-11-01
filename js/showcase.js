@@ -1372,7 +1372,7 @@ function initializeShowcaseModals() {
         'roket-tms': { code: 'tm', icon: 'fa-check-circle', name: 'Roket-TMS', tr: 'Görev Ve İş Takibi Yönetimi Modülü', en: 'Task and Work Tracking Management Module', ready: true, categoryTr: 'Proje ve Görev Yönetimi', categoryEn: 'Project & Task Management' },
         'roket-prod': { code: 'prod', icon: 'fa-box', name: 'Roket-PROD', tr: 'Ürün Geliştirme Ve Portföy Yönetimi Modülü', en: 'Product Development and Portfolio Management Module', categoryTr: 'Ürün ve Operasyon Yönetimi', categoryEn: 'Product & Operations Management' },
         'roket-crm': { code: 'crm', icon: 'fa-address-book', name: 'Roket-CRM', tr: 'Müşteri İlişkileri Yönetimi Modülü', en: 'Customer Relationship Management Module', categoryTr: 'Satış ve Müşteri Yönetimi', categoryEn: 'Sales & Customer Management' },
-        'roket-lms': { code: 'lms', icon: 'fa-graduation-cap', name: 'Roket-LMS', title: 'Roket-LMS (On-Premise)', tr: 'Kurumunuza Özel, Tam Güvenli ve Bütünleşik Eğitim, Staj ve İK Platformu', en: 'A Secure, Integrated Training, Internship and HR Platform Built for Your Organisation', eyebrowTr: 'Kurumsal Çözümler / Roket-LMS On-Premise', eyebrowEn: 'Enterprise Solutions / Roket-LMS On-Premise', salesTr: 'Kurumsal Demo Talep Et', salesEn: 'Request an Enterprise Demo', noComing: true, categoryTr: 'İnsan Kaynakları ve Eğitim', categoryEn: 'People & Learning' },
+        'roket-lms': { code: 'lms', icon: 'fa-graduation-cap', name: 'Roket-LMS', tr: 'Eğitim, Staj Ve Öğrenme Yönetimi Modülü', en: 'Training, Internship and Learning Management Module', salesTr: 'Kurumsal Demo Talep Et', salesEn: 'Request an Enterprise Demo', noComing: true, categoryTr: 'İnsan Kaynakları ve Eğitim', categoryEn: 'People & Learning' },
         'roket-hr': { code: 'hr', icon: 'fa-users', name: 'Roket-HR', tr: 'İnsan Kaynakları, CV ve Aday Havuzu Yönetimi Modülü', en: 'Human Resources, CV and Candidate Pool Management Module', categoryTr: 'İnsan Kaynakları ve Eğitim', categoryEn: 'People & Learning' },
         'roket-process': { code: 'proc', icon: 'fa-tasks', name: 'Roket-PROCESS', tr: 'İş Süreçleri Yönetimi Ve Optimizasyon Modülü', en: 'Business Process Management and Optimization Module', categoryTr: 'Ürün ve Operasyon Yönetimi', categoryEn: 'Product & Operations Management' },
         'roket-twin': { code: 'dt', icon: 'fa-building', name: 'Roket-TWIN', tr: 'Dijital Veri İkizi Ve Yapay Zeka Analitiği Modülü', en: 'Digital Data Twin and AI Analytics Module', categoryTr: 'Veri ve Yapay Zeka', categoryEn: 'Data & AI' }
@@ -1430,6 +1430,11 @@ function initializeShowcaseModals() {
             salesBtn.removeAttribute('data-i18n');
             salesBtn.innerHTML = product.salesTr ? langSpans(product.salesTr, product.salesEn) : langSpans('Satış ile İletişime Geç', 'Contact Sales');
         }
+        const pBanner = view.querySelector('.pbanner');
+        if (pBanner) pBanner.dataset.product = product.code;
+        view.querySelectorAll('[data-banner]').forEach((scene) => {
+            scene.hidden = scene.getAttribute('data-banner') !== product.code;
+        });
         const badge = view.querySelector('[data-product-badge]');
         badge.setAttribute('data-i18n', product.ready ? 'readyForSale' : 'comingSoon');
         badge.textContent = getTranslation(product.ready ? 'readyForSale' : 'comingSoon');
@@ -2391,4 +2396,22 @@ document.addEventListener('click', function (event) {
     event.preventDefault();
     const target = document.getElementById(link.getAttribute('data-legal-target'));
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+// Mentors (internship page): one card open at a time
+document.addEventListener('click', function (event) {
+    const head = event.target.closest('.mentor-head');
+    if (!head) return;
+    const card = head.closest('.mentor');
+    const open = !card.classList.contains('is-open');
+    document.querySelectorAll('.mentor.is-open').forEach(function (c) {
+        c.classList.remove('is-open');
+        c.querySelector('.mentor-body').hidden = true;
+        c.querySelector('.mentor-head').setAttribute('aria-expanded', 'false');
+    });
+    if (open) {
+        card.classList.add('is-open');
+        card.querySelector('.mentor-body').hidden = false;
+        head.setAttribute('aria-expanded', 'true');
+    }
 });
